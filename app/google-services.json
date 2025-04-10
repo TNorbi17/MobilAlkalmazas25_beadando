@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "748532182171",
+    "project_id": "focibajnoksagrxbkk7beadando",
+    "storage_bucket": "focibajnoksagrxbkk7beadando.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748532182171:android:526567a8ef829f384caa3e",
+        "android_client_info": {
+          "package_name": "com.example.focibajnoksag_rxbkk7_beadando"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgCdTzEWksUKLMCKnFbeTzpjq04wTfHso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

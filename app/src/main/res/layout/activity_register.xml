@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hatter_register"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+    <TextView
+        android:id="@+id/regisztraciotextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:text="@string/regisztraciogomb"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        />
+
+    <EditText
+        android:id="@+id/felhasznalonevedittext"
+        android:layout_below="@id/regisztraciotextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:layout_marginLeft="@dimen/default_margin_register"
+        android:layout_marginRight="@dimen/default_margin_register"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:autofillHints="@string/felhasznalonev"
+        android:hint="@string/felhasznalonev"
+        android:inputType="textPersonName"
+        android:background="#FFFFFF"
+        android:padding="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/emailedittext"
+        android:layout_below="@id/felhasznalonevedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:autofillHints="@string/email"
+        android:hint="@string/email"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:inputType="textEmailAddress"
+        android:background="#FFFFFF"
+        android:padding="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/jelszoEditText"
+        android:layout_below="@id/emailedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:background="#FFFFFF"
+        android:importantForAutofill="no"
+        android:padding="15dp"
+        android:ems="10"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/jelszo"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/jelszoujraEditText"
+        android:layout_below="@id/jelszoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:ems="10"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/jelszoujra"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:background="#FFFFFF"
+        android:padding="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/telefonszamedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jelszoujraEditText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:layout_marginRight="30dp"
+        android:ems="10"
+        android:hint="@string/telefonszam"
+        android:background="#FFFFFF"
+        android:importantForAutofill="no"
+        android:padding="15dp"
+        android:inputType="phone"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/adddressedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/telefonszamedittext"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:layout_marginRight="30dp"
+        android:ems="10"
+        android:hint="@string/cim"
+        android:inputType="textPostalAddress|textMultiLine"
+        android:background="#FFFFFF"
+        android:padding="15dp"
+        android:maxLines="3"
+        tools:visibility="visible" />
+
+
+    <Spinner
+        android:id="@+id/spinnerLiga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adddressedittext"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#FFFFFF"
+        android:padding="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:layout_marginRight="30dp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/spinnerLiga"
+        android:layout_marginTop="@dimen/default_margin_register"
+        android:layout_centerHorizontal="true"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/regisztraciogomb"
+            android:onClick="register"
+            android:backgroundTint="#008000"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/megse"
+            android:layout_marginStart="40dp"
+            android:onClick="megse"
+            android:backgroundTint="#D2042D"
+            />
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

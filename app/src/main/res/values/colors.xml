@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    4f5f76
+    <color name="buttoncolor">#4f5f76</color>
+    <color name="primary">#6200EE</color>
+    <color name="secondary">#03DAC5</color>
+    <color name="light_blue">#269ccc</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="red">#FF0000</color>
+    <color name="table_row_even">#F5F5F5</color>
+    <color name="table_row_odd">#FFFFFF</color>
+    <color name="table_header">#6200EE</color>
+    <color name="gray">#757575</color>
+    <color name="ice_cold">#a0d2eb</color>
+    <color name="freeze_purple">#e5eaf5</color>
+    <color name="medium_purple">#d0bdf4</color>
+    <color name="purple_pain">#8458B3</color>
+    <color name="heavy_purple">#a28089</color>
+    <color name="gold">#FFD700</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="bronze">#CD7F32</color>
+</resources>

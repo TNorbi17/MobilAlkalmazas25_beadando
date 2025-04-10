@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">FociBajnoksag_RXBKK7_beadando</string>
+    <string name="email">Email</string>
+    <string name="jelszo">Jelszó</string>
+    <string name="bejelentkezesgomb">Bejelentkezés</string>
+    <string name="regisztraciogomb">Regisztráció</string>
+    <string name="bejelentkezesgombvendeg">Belépés vendégként</string>
+    <string name="felhasznalonev">Felhasználónév</string>
+    <string name="jelszoujra">Jelszó mégegyszer</string>
+    <string name="telefonszam">Telefonszám</string>
+    <string name="megse">Mégse</string>
+    <string name="cim">Cím</string>
+    <string name="profilom">Profilom</string>
+    <string name="premier_league_tablazat">Premier League Táblázat</string>
+    <string name="udvozles">Üdvözöljük a FociBajnokság alkalmazásban!</string>
+    <string name="leiras">Ez az alkalmazás a különbző bajnokságok tabelláiról nyújt információkat. Nézze meg a csapatok statisztikáit és vessen pillantást a saját profiljára!</string>
+    <string name="premier_league_csapatok">Premier League Csapatok</string>
+    <string name="team">Csapat</string>
+    <string name="top_scorers">Góllövőlista</string>
+    <string name="goals">Gól</string>
+    <string name="player_name">Név</string>
+    <string name="gollovokPL">Góllövőlista</string>
+    <string name="szerkesztes">Profil Szerkesztése</string>
+    <string name="Profilkep">Profilkép</string>
+    <string name="szerklabel">A fenti gomb és az oldal még szerkesztés alatt áll!</string>
+    <string name="liga">Kedvenc Liga</string>
+    <string-array name="ligak">
+        <item>Premier League</item>
+        <item>BundesLiga</item>
+        <item>Ligue 1</item>
+        <item>La Liga</item>
+        <item>Seria A</item>
+        <item>Egyéb</item>
+    </string-array>
+</resources>
