@@ -2,6 +2,7 @@ package com.example.focibajnoksag_rxbkk7_beadando;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -32,6 +35,11 @@ public class PremierLeagueActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseFirestore db;
 
+    private Button btnTopTeams;
+    private Button btnAllTeams;
+    private Button btnDraws;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +52,14 @@ public class PremierLeagueActivity extends AppCompatActivity {
 
         addTableHeader();
         loadTeamsFromFirestore();
+
+        btnTopTeams = findViewById(R.id.btnTopTeams);
+        btnAllTeams = findViewById(R.id.btnAllTeams);
+        btnDraws = findViewById(R.id.btnDrawsMost);
+
+        btnTopTeams.setOnClickListener(v -> loadWorstTeams());
+        btnAllTeams.setOnClickListener(v -> loadAllTeams());
+        btnDraws.setOnClickListener(v -> loadTopDraws());
     }
 
     private void addTableHeader() {
@@ -94,7 +110,7 @@ public class PremierLeagueActivity extends AppCompatActivity {
                                     Log.e("Firestore", "Hiba a kézi konverzióban", e);
                                 }
                             }
-
+                            //rendezés
                             Collections.sort(teams, (t1, t2) -> t2.getPoints() - t1.getPoints());
 
 
@@ -165,4 +181,87 @@ public class PremierLeagueActivity extends AppCompatActivity {
         Intent intent = new Intent(this,PLGollovolistaActivity.class);
         startActivity(intent);
     }
+
+
+
+    private void loadAllTeams() {
+        progressBar.setVisibility(View.VISIBLE);
+        db.collection("teams")
+                .orderBy("points", Query.Direction.DESCENDING)
+                .get()
+                .addOnCompleteListener(task -> {
+                    progressBar.setVisibility(View.GONE);
+                    if (task.isSuccessful()) {
+                        handleSuccessfulQuery(task.getResult(), "Összes csapat betöltve");
+                    } else {
+                        Toast.makeText(this,"Hiba!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void loadWorstTeams() {
+        progressBar.setVisibility(View.VISIBLE);
+        db.collection("teams")
+                .whereGreaterThanOrEqualTo("losses", 10)
+                .orderBy("losses", Query.Direction.DESCENDING)
+                .limit(5)
+                .get()
+                .addOnCompleteListener(task -> {
+                    progressBar.setVisibility(View.GONE);
+                    if (task.isSuccessful()) {
+                        handleSuccessfulQuery(task.getResult(), "Az 5 legtöbb vereséggel rendelkező csapat!");
+                    } else {
+                        Toast.makeText(this,"Hiba!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void loadTopDraws() {
+        progressBar.setVisibility(View.VISIBLE);
+        db.collection("teams")
+                .orderBy("draws", Query.Direction.DESCENDING)
+                .limit(5)
+                .get()
+                .addOnCompleteListener(task -> {
+                    progressBar.setVisibility(View.GONE);
+                    if (task.isSuccessful()) {
+                        handleSuccessfulQuery(task.getResult(), "Az 5 legtöbb döntetlennel rendelkező csapat!");
+                    } else {
+                        Toast.makeText(this,"Hiba!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void handleSuccessfulQuery(QuerySnapshot querySnapshot, String successMessage) {
+        if (querySnapshot != null && !querySnapshot.isEmpty()) {
+            List<Team> teams = new ArrayList<>();
+            for (QueryDocumentSnapshot document : querySnapshot) {
+                Map<String, Object> data = document.getData();
+                Team team = new Team();
+                try {
+                    team.setName((String) data.get("name"));
+                    team.setWins(((Long) data.get("wins")).intValue());
+                    team.setDraws(((Long) data.get("draws")).intValue());
+                    team.setLosses(((Long) data.get("losses")).intValue());
+                    team.setPoints(((Long) data.get("points")).intValue());
+                    teams.add(team);
+                } catch (Exception e) {
+                    Log.e("Firestore", "Hiba a kézi konverzióban", e);
+                }
+            }
+
+            runOnUiThread(() -> {
+                tableLayout.removeAllViews();
+                addTableHeader();
+                for (int i = 0; i < teams.size(); i++) {
+                    addTeamToTable(teams.get(i), i);
+                }
+            });
+            Toast.makeText(this, successMessage, Toast.LENGTH_SHORT).show();
+        } else {
+            Log.w("Firestore", "Nincsenek adatok");
+            Toast.makeText(this, "Nincsenek megjeleníthető adatok", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
