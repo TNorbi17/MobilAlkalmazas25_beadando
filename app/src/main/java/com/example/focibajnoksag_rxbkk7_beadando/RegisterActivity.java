@@ -153,6 +153,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         user.put("telefonszam", telefonszam);
         user.put("liga", liga);
         user.put("cim", cim);
+        user.put("votesLeft",5);
         user.put("regisztracioIdopont", System.currentTimeMillis());
 
         db.collection("users").document(userId)

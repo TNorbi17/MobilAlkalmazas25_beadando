@@ -35,7 +35,8 @@
 
             <TableRow
                 android:background="@color/table_header"
-                android:layout_marginBottom="4dp">
+                android:layout_marginBottom="4dp"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -60,6 +61,13 @@
                     android:textColor="@color/white"
                     android:padding="8dp"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/szavazat"
+                    android:textColor="@color/white"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
             </TableRow>
         </TableLayout>
 
@@ -70,5 +78,21 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:visibility="gone"/>
+        <Button
+            android:id="@+id/voteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/szavazas"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:id="@+id/leirasszavazas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/leirasszavazas"
+            android:textColor="@color/white"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
