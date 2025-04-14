@@ -24,6 +24,10 @@
     <string name="Profilkep">Profilkép</string>
     <string name="szerklabel">A fenti gomb és az oldal még szerkesztés alatt áll!</string>
     <string name="liga">Kedvenc Liga</string>
+    <string name="ujfhnev">Adja meg új felhasználó nevét!</string>
+    <string name="ujcim">Adja meg az új címét!</string>
+    <string name="mentes">Mentés</string>
+    <string name="vigy_zat_a_t_rl_s_nem_visszavonhat">Vigyázat! A törlés nem visszavonható!</string>
     <string-array name="ligak">
         <item>Premier League</item>
         <item>BundesLiga</item>

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.FociBajnoksag_RXBKK7_beadando"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity"
+            />
+        <activity
             android:name=".PLGollovolistaActivity"
             android:exported="false" />
         <activity

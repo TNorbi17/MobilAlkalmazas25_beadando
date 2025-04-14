@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hatter_profil"
+    android:fillViewport="true"
+    tools:context=".EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profil szerkesztése"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#FFFFFF"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/felhasznalonev"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/edit_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="16dp"
+                    android:paddingVertical="20dp"
+                    android:hint="@string/ujfhnev"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telefonszam"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/edit_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:inputType="phone"
+                    android:paddingVertical="20dp"
+                    android:hint="@string/telefonszam"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/liga"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <Spinner
+                    android:id="@+id/spinnerLiga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:padding="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cim"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/edit_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:inputType="textPostalAddress"
+                    android:paddingVertical="20dp"
+                    android:hint="@string/ujcim"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mentes"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/gold"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -207,28 +207,33 @@
             android:backgroundTint="@color/gold"
             android:textSize="16sp"
             android:padding="16dp"
+            android:onClick="editProfile"
             android:layout_marginTop="8dp"
             />
-        <TextView
-            android:id="@+id/szerkesztlabel"
+
+
+        <Button
+            android:id="@+id/deleteButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/szerklabel"
-            android:textColor="@color/black"
-            android:background="@color/yellow"
+            android:text="@string/profilom"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/red"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:onClick="deleteProfile"/>
 
-        <ImageView
-            android:id="@+id/gif"
-            android:layout_width="237dp"
-            android:layout_height="184dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            tools:ignore="RtlHardcoded"
-            tools:src="@drawable/sadcat" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vigy_zat_a_t_rl_s_nem_visszavonhat"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="4dp"/>
+
 
 
     </LinearLayout>
