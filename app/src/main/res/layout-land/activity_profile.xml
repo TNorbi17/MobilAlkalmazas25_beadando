@@ -198,37 +198,51 @@
         </androidx.cardview.widget.CardView>
 
 
-        <Button
-            android:id="@+id/editgomb"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/szerkesztes"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/gold"
-            android:textSize="16sp"
-            android:padding="16dp"
-            android:layout_marginTop="8dp"
-            />
-        <TextView
-            android:id="@+id/szerkesztlabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/szerklabel"
-            android:textColor="@color/black"
-            android:background="@color/yellow"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="8dp">
 
-        <ImageView
-            android:id="@+id/gif"
-            android:layout_width="237dp"
-            android:layout_height="184dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            tools:ignore="RtlHardcoded"
-            tools:src="@drawable/sadcat" />
+            <Button
+                android:id="@+id/editgomb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/szerkesztes"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/gold"
+                android:onClick="editProfile"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/torles"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginStart="4dp"
+                android:onClick="deleteProfile"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vigy_zat_a_t_rl_s_nem_visszavonhat"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="4dp"/>
+
+
 
 
     </LinearLayout>

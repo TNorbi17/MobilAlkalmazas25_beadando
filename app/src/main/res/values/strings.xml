@@ -31,6 +31,7 @@
     <string name="szavazat">Szavazat</string>
     <string name="leirasszavazas">A játékosok nevére kattintva lehetőséged van összesen 5 szavazásra, hogy szerinted ki fogja megnyerni a Gólkirályi címet.\nEgyszerre egy játékosra tudsz szavazni.</string>
     <string name="szavazas">Szavazás</string>
+    <string name="torles">Profil Törlése</string>
     <string-array name="ligak">
         <item>Premier League</item>
         <item>BundesLiga</item>

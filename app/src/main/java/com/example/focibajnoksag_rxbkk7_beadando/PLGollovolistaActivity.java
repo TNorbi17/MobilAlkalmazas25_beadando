@@ -23,7 +23,7 @@ import java.util.List;
 public class PLGollovolistaActivity extends AppCompatActivity {
 
     private static final String TAG = "PLGollovolistaActivity";
-    private static final int INITIAL_VOTES = 3;
+    private static final int INITIAL_VOTES = 5;
 
     private TableLayout topScorersTable;
     private ProgressBar progressBar;
@@ -41,23 +41,23 @@ public class PLGollovolistaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plgollovolista);
 
-        // Firebase inicializálása
+
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
 
-        // View-k inicializálása
         topScorersTable = findViewById(R.id.topScorersTable);
         progressBar = findViewById(R.id.progressBar);
         voteButton = findViewById(R.id.voteButton);
 
-        // Szavazás gomb eseménykezelő
 
 
-        // Felhasználó adatainak betöltése
+
+
         loadUserData();
-        // Gólkirályok adatainak betöltése
+
         loadTopScorers();
+
         mNotification = new NotificationHandler(this);
 
         voteButton.setOnClickListener(v -> {

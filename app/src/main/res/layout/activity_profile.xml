@@ -198,31 +198,39 @@
         </androidx.cardview.widget.CardView>
 
 
-        <Button
-            android:id="@+id/editgomb"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/szerkesztes"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/gold"
-            android:textSize="16sp"
-            android:padding="16dp"
-            android:onClick="editProfile"
-            android:layout_marginTop="8dp"
-            />
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="8dp">
 
+            <Button
+                android:id="@+id/editgomb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/szerkesztes"
+                android:textColor="@color/black"
+                android:onClick="editProfile"
+                android:backgroundTint="@color/gold"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginEnd="4dp"/>
 
-        <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/profilom"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/red"
-            android:textSize="16sp"
-            android:padding="16dp"
-            android:layout_marginTop="8dp"
-            android:onClick="deleteProfile"/>
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/torles"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginStart="4dp"
+                android:onClick="deleteProfile"/>
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
