@@ -7,69 +7,100 @@
     android:fillViewport="true"
     android:background="@drawable/hatter_pl">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".PremierLeagueActivity">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
             android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:paddingEnd="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/premier_league_csapatok"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:gravity="center"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="24dp"/>
 
-            <HorizontalScrollView
+            <TableLayout
+                android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:stretchColumns="*"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
 
-                <TableLayout
-                    android:id="@+id/tableLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:stretchColumns="*"
-                    android:shrinkColumns="none"/>
-            </HorizontalScrollView>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="16dp">
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:visibility="gone"/>
+                android:padding="8dp">
 
                 <Button
-                    android:id="@+id/plligababsut"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btnAllTeams"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/osszes_csapat"
+                    android:layout_marginEnd="8dp"
                     android:backgroundTint="@color/light_blue"
-                    android:onClick="plgollovok"
-                    android:padding="12dp"
-                    android:text="@string/gollovokPL"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    />
+                <Button
+                    android:id="@+id/btnTopTeams"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/legtobb_vereseg"
+                    android:backgroundTint="@color/gold"
+                    android:textColor="@color/black"
+                    />
             </LinearLayout>
+            <Button
+                android:id="@+id/btnDrawsMost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/legtobb_dontetlen"
+                android:backgroundTint="@color/gold"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp"
+                />
+            <Button
+                android:id="@+id/plligababsut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_blue"
+                android:onClick="plgollovok"
+                android:text="@string/gollovokPL"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_marginTop="24dp"
+               />
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

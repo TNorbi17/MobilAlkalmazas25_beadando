@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/hatter_index"
+    android:background="@drawable/stad_bg"
     tools:context=".IndexActivity">
 
     <ImageView
@@ -25,19 +25,20 @@
         android:text="@string/udvozles"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/intro_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="@string/leiras"
-        android:gravity="center"
-        android:textColor="@color/black"
         android:layout_marginBottom="32dp"
-        android:lineSpacingExtra="4dp"/>
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="@string/leiras"
+        android:textColor="@color/white"
+        android:background="@drawable/hatter_index"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/profile_button"
