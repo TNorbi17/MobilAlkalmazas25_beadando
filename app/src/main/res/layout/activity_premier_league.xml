@@ -52,7 +52,7 @@
                 android:id="@+id/btnAllTeams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Összes csapat"
+                android:text="@string/osszes_csapat"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/light_blue"/>
 
@@ -60,7 +60,7 @@
                 android:id="@+id/btnTopTeams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Csak a legjobbak"
+                android:text="@string/legtobb_vereseg"
                 android:backgroundTint="@color/gold"/>
 
         </LinearLayout>
@@ -68,7 +68,7 @@
             android:id="@+id/btnDrawsMost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Legtöbb döntetlen"
+            android:text="@string/legtobb_dontetlen"
             android:backgroundTint="@color/gold"
             android:layout_marginTop="8dp"/>
 
